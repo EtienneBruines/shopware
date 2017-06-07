@@ -16,8 +16,8 @@ UPDATE s_core_config_elements SET `label`='Hostname für die Message-ID', descri
 INSERT IGNORE INTO s_core_config_element_translations (element_id, locale_id, label, description) VALUES(@elementID, @localeID, 'Message ID hostname', 'Will be received in headers on a default HELO string. If not defined, the value returned from SERVER_NAME, "localhost.localdomain" will be used.');
 
 SET @elementID = (SELECT id FROM s_core_config_elements WHERE form_id=@formID AND `name`='mailer_mailer');
-UPDATE s_core_config_elements SET `label`='Methode zum Senden der Mail', description='mail, SMTP oder file' WHERE id=@elementID;
-INSERT IGNORE INTO s_core_config_element_translations (element_id, locale_id, label, description) VALUES(@elementID, @localeID, 'Sending method', 'mail, SMTP or file');
+UPDATE s_core_config_elements SET `label`='Methode zum Senden der Mail', description='mail, smtp oder file' WHERE id=@elementID;
+INSERT IGNORE INTO s_core_config_element_translations (element_id, locale_id, label, description) VALUES(@elementID, @localeID, 'Sending method', 'mail, smtp or file');
 
 SET @elementID = (SELECT id FROM s_core_config_elements WHERE form_id=@formID AND `name`='mailer_port');
 UPDATE s_core_config_elements SET `label`='Standard Port', description='Setzt den Standard SMTP Server-Port' WHERE id=@elementID;
